@@ -4,9 +4,11 @@ import Signin from './assets/Pages/Signin';
 import Profile from './assets/Pages/Profile';
 import Home from './assets/Pages/Home';
 import About from './assets/Pages/About';
+import Header from './components/Header';
 export default function App(){
   return(
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<Signin />} />   
