@@ -5,15 +5,18 @@ import Profile from './assets/Pages/Profile';
 import Home from './assets/Pages/Home';
 import About from './assets/Pages/About';
 import Header from './components/Header';
+import PrivateRoute from './components/PrivateRoute';
 export default function App(){
   return(
     <BrowserRouter>
     <Header />
-      <Routes>
+     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<Signin />} />   
         <Route path="/sign-up" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
